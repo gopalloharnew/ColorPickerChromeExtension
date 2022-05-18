@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap");
+
+:root {
+  color-scheme: light;
+  font-size: 16px;
+  --body-bg: hsl(0, 0%, 100%);
+  --body-text: hsl(222, 8%, 8%);
+  --border-color: hsl(222, 22%, 90%);
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --body-bg: hsl(222, 15%, 15%);
+    --body-text: hsl(222, 90%, 92%);
+    --border-color: hsl(222, 22%, 5%);
+  }
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--body-bg);
+  color: var(--body-text);
+  font-family: "Fira Code", monospace;
+}
+
+.container {
+  width: 400px;
+  height: 150px;
+  display: flex;
+}
+
+.color-picker-button-wraper {
+  flex: 0 0 150px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.color-picker-button {
+  width: 80%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-image: url("../icons/icon-64.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  cursor: pointer;
+  border: 1px solid var(--border-color);
+}
+
+.color-result-wraper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid var(--border-color);
+  font-weight: bold;
+}
+
+.color-result {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.8;
+  transition: opacity 250ms ease;
+}
+
+.color-result:hover {
+  opacity: 1;
+}
+
+.color-result:nth-of-type(2n) {
+  border: 1px solid var(--border-color);
+  border-width: 1px 0px 1px 0px;
+}
+
+.copy-icon {
+  background-image: url("../icons/copy-icon.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 50px;
+  height: 50px;
+}
+
+.copy-icon.ok {
+  background-image: url("../icons/ok-icon.png");
+}
